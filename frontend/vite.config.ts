@@ -18,6 +18,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      '@': resolve(__dirname, './src'),
       '@project/voting': resolve(__dirname, '../anchor_project/src'),
     },
   },

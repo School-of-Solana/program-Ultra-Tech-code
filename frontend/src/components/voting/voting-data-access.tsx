@@ -14,13 +14,13 @@ export function useVotingProgram() {
   const provider = useAnchorProvider()
   const transactionToast = useTransactionToast()
   const programId = useMemo(() => getVotingProgramId(cluster.network as Cluster), [cluster])
-  const program = useMemo(() => getVotingProgram(provider, programId), [provider, programId])
+  const program: any = useMemo(() => getVotingProgram(provider, programId), [provider, programId])
 
   const polls = useQuery({
     queryKey: ['voting', 'polls', { cluster }],
     queryFn: async () => {
       try {
-        const allAccounts = await program.account.poll.all()
+        const allAccounts = await (program.account as any).poll.all()
         return allAccounts.map((account: any) => ({
           publicKey: account.publicKey,
           ...account.account,
