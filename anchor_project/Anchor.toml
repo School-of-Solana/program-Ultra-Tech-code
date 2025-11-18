@@ -1,0 +1,23 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+voting = "68HyhDBMe8rSesE5YMpG1LZuJuL1s24tcC7knd3dHgQc"
+
+[programs.devnet]
+voting = "68HyhDBMe8rSesE5YMpG1LZuJuL1s24tcC7knd3dHgQc"
+
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "../frontend/node_modules/.bin/jest"
